@@ -1,0 +1,4 @@
+SQl
+create table 
+create table UserRegister (UserId varchar2(20),Password varchar2(20),AccountType varchar2(20),FirstName varchar2(20),LastName varchar2(20),Gender varchar2(10),city varchar2(15),
+mailid varchar2(20),Phno Number(20),AlternativeNumber number(20),Address1 varchar2(30),Address varchar2(30)); 
