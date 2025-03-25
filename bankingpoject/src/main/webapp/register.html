@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <script>
+        let count = 1000;
+
+        function generateAccNo(event) {
+            event.preventDefault(); // Prevent form submission
+            count++;
+            document.getElementById("Accountno").value = count;
+            console.log("Generated Account Number:", count);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>Bank Account Registration</title>
 </head>
 <body>
-	<form action="register" method="post">
-		UserId:<input type="text" name="USerID"><br>
-		Password:<input type="password" name="password"><br>
-		Saving<input type="checkbox" id="saving account" name="saving"><br>
-		Credit<input type="checkbox" id="Credit account" name="credit"><br>
-		FirstName:<input type="text"name="fname"> <br>
-		LastName:<input type="text" name="Lname"><br>
-		City:<input type="text" name="city"> <br>
-		MailId:<input type="text"name="mailID"> <br>
-		PhnoNumber:<input type="text" name="phno"><br>
-		Alternative number:<input type="text" name="Altnumber"><br>
-		Address 1:<input type="text" name="Adrress1"><br>
-		Address 2:<input type="text" name="Adrress2"><br>
-		<input type="submit" value="Register"><br>
-	</form>
+    <form action="register" method="post">
+        UserId: <input type="text" name="USerID"><br>
+        Password: <input type="password" name="password"><br>
+
+        <label>Account type</label>
+        <input type="radio" id="Saving" name="Accounttype" value="Saving">
+        <label for="Saving">Saving</label>
+        <input type="radio" id="Credit" name="Accounttype" value="Credit">
+        <label for="Credit">Credit</label><br>
+
+        First Name: <input type="text" name="fname"><br>
+        Last Name: <input type="text" name="Lname"><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+
+        City: <input type="text" name="city"><br>
+        Mail ID: <input type="text" name="mailID"><br>
+        Phone Number: <input type="text" name="phno"><br>
+        Alternative Number: <input type="text" name="Altnumber"><br>
+        Address 1: <input type="text" name="Adrress1"><br>
+        Address 2: <input type="text" name="Adrress2"><br>
+
+        <label for="Accountno">Account NO:</label>
+        <input type="text" id="Accountno" placeholder="Click generate" readonly>
+        <button onclick="generateAccNo(event)">Generate</button><br>
+
+        <input type="submit" value="Register"><br>
+    </form>
 </body>
 </html>

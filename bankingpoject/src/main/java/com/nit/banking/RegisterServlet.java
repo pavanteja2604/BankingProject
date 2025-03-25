@@ -31,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
 		ub.setCity(req.getParameter("city"));
 		ub.setmId(req.getParameter("mailID"));
 		//ub.setPhno(Long.parseLong(req.getParameter("phno")));
-		//ub.setAltnum(Long.parseLong(req.getParameter("Altnumber")));
+	    ub.setAltnum(Long.parseLong(req.getParameter("Altnumber")));
 		ub.setAddress1(req.getParameter("Address1"));
 		ub.setAddress2(req.getParameter("Address2"));
 		int k=0;
