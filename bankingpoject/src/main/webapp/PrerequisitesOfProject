@@ -1,4 +1,14 @@
 SQl
-create table 
+----------------------------------------------------------------------------
+------create table----- 
 create table UserRegister (UserId varchar2(20),Password varchar2(20),AccountType varchar2(20),FirstName varchar2(20),LastName varchar2(20),Gender varchar2(10),city varchar2(15),
-mailid varchar2(20),Phno Number(20),AlternativeNumber number(20),Address1 varchar2(30),Address varchar2(30)); 
+mailid varchar2(20),Phno Number(20),AlternativeNumber number(20),Address1 varchar2(30),Address varchar2(30));
+Alter table Userregister Add AccountNo number(38) primary key; 
+INSERT INTO Userregister (USERID, PASSWORD, ACCOUNTTYPE, FIRSTNAME, LASTNAME, GENDER, CITY, MAILID, PHNO, ALTERNATIVENUMBER, ADDRESS1, ADDRESS, ACCOUNTNO) 
+VALUES ('user123', 'password123', 'Saving', 'John', 'Doe', 'Male', 'New York', 'john.doe@example.com', 9876543210, 9876501234, '123 Main St', 'Apt 456', 1000000001);
+------------------------------------------------------------------
+------Vardhan task----
+1)adding css to all html page
+2)generate the accNo
+3)add mandatory symbols
+4)

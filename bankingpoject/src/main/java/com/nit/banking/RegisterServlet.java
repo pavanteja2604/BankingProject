@@ -17,20 +17,11 @@ public class RegisterServlet extends HttpServlet {
 		UserBean ub=new UserBean();
 		ub.setuName(req.getParameter("USerID"));
 		ub.setpWord(req.getParameter("password"));
-		String s="saving";
-		String c="Credit";
-		if(s.equalsIgnoreCase("Saving")){
-			ub.setAccount(req.getParameter("saving"));
-			
-		}
-		else if(c.equalsIgnoreCase("credit")){
-			ub.setAccount(req.getParameter("Credit"));
-		}
 		ub.setFname(req.getParameter("fname"));
 		ub.setLName(req.getParameter("Lname"));
 		ub.setCity(req.getParameter("city"));
 		ub.setmId(req.getParameter("mailID"));
-		//ub.setPhno(Long.parseLong(req.getParameter("phno")));
+		ub.setPhno(Long.parseLong(req.getParameter("phno")));
 	    ub.setAltnum(Long.parseLong(req.getParameter("Altnumber")));
 		ub.setAddress1(req.getParameter("Address1"));
 		ub.setAddress2(req.getParameter("Address2"));

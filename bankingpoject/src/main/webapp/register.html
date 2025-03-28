@@ -5,10 +5,16 @@
         let count = 1000;
 
         function generateAccNo(event) {
+			//fetch('/bankingpoject/AccountNumberGenerate')
+			//.then(respone=>respone.text())
+			//.then(data=>{
+				document.getElementById("Accountno").value = data;
+			//})
+			//.catch(error=>console.error("ppppp".error))
             event.preventDefault(); // Prevent form submission
             count++;
             document.getElementById("Accountno").value = count;
-            console.log("Generated Account Number:", count);
+            console.log("Generated Account Number:",data);
         }
     </script>
     <meta charset="UTF-8">
