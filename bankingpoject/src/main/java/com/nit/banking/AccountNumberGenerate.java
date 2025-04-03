@@ -1,35 +1,21 @@
 package com.nit.banking;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@SuppressWarnings("serial")
-public class AccountNumberGenerate extends HttpServlet{
-	private static final long AccountNumber =1L;
-	protected void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException ,IOException {
-		try {
-		Connection con=DBConnection.getCon();
-		PreparedStatement ps=con.prepareStatement("Select Max(AccountNO)from UserRegister");
-		ResultSet rs=ps.executeQuery();
-		long newAccountNo=100000001l;
-		if(rs.next() && rs.getLong(1)!=0) {
-			newAccountNo=rs.getLong(1)+1;
-		}
-		res.getWriter().write(String.valueOf(newAccountNo));
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		
-	}
-	
+@WebServlet("/AccountNumberGenerate")
+public class AccountNumberGenerate extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RegisterDAO userDAO = new RegisterDAO();
+        String accNumber = RegisterDAO.generateAccountNumber();
+        response.getWriter().write(accNumber);
+    }
 }
+

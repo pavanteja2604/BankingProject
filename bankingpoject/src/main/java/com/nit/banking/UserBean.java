@@ -3,7 +3,7 @@ import java.io.*;
 @SuppressWarnings("serial")
 public class UserBean implements Serializable
 {
-	private String uName,pWord,fname,LName,City,mId,address1,address2,account;
+	private String uName,pWord,accountype,fname,LName,gender,City,mId,address1,address2,accountnumber;
 	private Long phno,altnum;
 	public String getuName() {
 		return uName;
@@ -17,6 +17,12 @@ public class UserBean implements Serializable
 	public void setpWord(String pWord) {
 		this.pWord = pWord;
 	}
+	public String getAccountype() {
+		return accountype;
+	}
+	public void setAccountype(String accountype) {
+		this.accountype = accountype;
+	}
 	public String getFname() {
 		return fname;
 	}
@@ -28,6 +34,12 @@ public class UserBean implements Serializable
 	}
 	public void setLName(String lName) {
 		LName = lName;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getCity() {
 		return City;
@@ -53,6 +65,12 @@ public class UserBean implements Serializable
 	public void setAddress2(String address2) {
 		this.address2 = address2;
 	}
+	public String getAccountnumber() {
+		return accountnumber;
+	}
+	public void setAccountnumber(String accountnumber) {
+		this.accountnumber = accountnumber;
+	}
 	public Long getPhno() {
 		return phno;
 	}
@@ -65,13 +83,5 @@ public class UserBean implements Serializable
 	public void setAltnum(Long altnum) {
 		this.altnum = altnum;
 	}
-	public String getAccount() {
-		return account;
-	}
-	public void setAccount(String account) {
-		this.account = account;
-	}
 	
-	
-
 }

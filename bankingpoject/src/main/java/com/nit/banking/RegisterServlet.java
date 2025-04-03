@@ -17,6 +17,7 @@ public class RegisterServlet extends HttpServlet {
 		UserBean ub=new UserBean();
 		ub.setuName(req.getParameter("USerID"));
 		ub.setpWord(req.getParameter("password"));
+		
 		ub.setFname(req.getParameter("fname"));
 		ub.setLName(req.getParameter("Lname"));
 		ub.setCity(req.getParameter("city"));

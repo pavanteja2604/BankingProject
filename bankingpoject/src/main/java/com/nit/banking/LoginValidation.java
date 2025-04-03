@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-@WebServlet("/user")
+@WebServlet("/userLogin")
 @SuppressWarnings("serial")
 
 public class LoginValidation  extends HttpServlet {
@@ -20,7 +20,7 @@ public class LoginValidation  extends HttpServlet {
 		String userId=req.getParameter("UserId");
 		String password=req.getParameter("Password");
 		try {
-			Connection con=DBConnection.getCon();
+			Connection con = DbConnection.getConnection();
 			PreparedStatement ps=con.prepareStatement("Select *from Userregister where AccountNo=? and UserId=? and password=?");
 			ps.setString(1, Acno);
 			ps.setString(2,userId);
