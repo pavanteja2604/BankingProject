@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-        let count = 1000;
-
-        function generateAccNo(event) {
-			//fetch('/bankingpoject/AccountNumberGenerate')
-			//.then(respone=>respone.text())
-			//.then(data=>{
-				document.getElementById("Accountno").value = data;
-			//})
-			//.catch(error=>console.error("ppppp".error))
-            event.preventDefault(); // Prevent form submission
-            count++;
-            document.getElementById("Accountno").value = count;
-            console.log("Generated Account Number:",data);
-        }
-    </script>
+   
     <meta charset="UTF-8">
     <title>Bank Account Registration</title>
 </head>
@@ -24,7 +9,9 @@
     <form action="register" method="post">
         UserId: <input type="text" name="USerID"><br>
         Password: <input type="password" name="password"><br>
-
+        <br>
+        <br>
+        <br>
         <label>Account type</label>
         <input type="radio" id="Saving" name="Accounttype" value="Saving">
         <label for="Saving">Saving</label>
@@ -46,11 +33,9 @@
         Alternative Number: <input type="text" name="Altnumber"><br>
         Address 1: <input type="text" name="Adrress1"><br>
         Address 2: <input type="text" name="Adrress2"><br>
-
-        <label for="Accountno">Account NO:</label>
-        <input type="text" id="Accountno" placeholder="Click generate" readonly>
-        <button onclick="generateAccNo(event)">Generate</button><br>
-
+        Accountno:<input type="text" name="Accountno"><br>
+        
+       
         <input type="submit" value="Register"><br>
     </form>
 </body>

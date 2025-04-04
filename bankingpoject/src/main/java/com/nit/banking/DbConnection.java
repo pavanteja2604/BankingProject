@@ -5,9 +5,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnection {
-    public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName(DBInfo.driver);
-        return DriverManager.getConnection(DBInfo.dbUrl, DBInfo.uName, DBInfo.Pword);
-    }
+	private static Connection con=null;
+	private DbConnection(){	
+	}
+	static {
+		try {
+			Class.forName(DBInfo.driver);
+			con=DriverManager.getConnection(DBInfo.dbUrl,DBInfo.uName,DBInfo.Pword);
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	public static Connection getCon() {
+		return con;
+	}
+    
 }
 

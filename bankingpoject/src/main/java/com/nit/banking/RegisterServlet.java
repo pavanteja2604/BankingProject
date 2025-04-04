@@ -17,15 +17,17 @@ public class RegisterServlet extends HttpServlet {
 		UserBean ub=new UserBean();
 		ub.setuName(req.getParameter("USerID"));
 		ub.setpWord(req.getParameter("password"));
-		
+		ub.setAccountype(req.getParameter("Accounttype"));
 		ub.setFname(req.getParameter("fname"));
 		ub.setLName(req.getParameter("Lname"));
+		ub.setGender(req.getParameter("gender"));
 		ub.setCity(req.getParameter("city"));
 		ub.setmId(req.getParameter("mailID"));
 		ub.setPhno(Long.parseLong(req.getParameter("phno")));
 	    ub.setAltnum(Long.parseLong(req.getParameter("Altnumber")));
 		ub.setAddress1(req.getParameter("Address1"));
 		ub.setAddress2(req.getParameter("Address2"));
+		ub.setAccountnumber(req.getParameter("Accountno"));
 		int k=0;
 		if(k>0) {
 			req.setAttribute("msg","User Register SucessFully...<br>");
